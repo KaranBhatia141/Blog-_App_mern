@@ -5,9 +5,10 @@ const jwt = require('jsonwebtoken'); // it help to authenticate, user verifiying
 const bcrypt = require('bcryptjs');// it use to protect user password with method of hashing
 const User = require('./models/User'); 
 const Post = require('./models/Post'); 
+const dotenv = require('dotenv');
 
 
-
+dotenv.config();
 JWT_SECRET = 'karan';  // jwt secert key that help for to identiy that session is created by you server its a heart of token
 
 mongoose.connect("mongodb://127.0.0.1:27017/Blog-app") // its is a part to connect nodejs to momgodb 
@@ -80,7 +81,7 @@ app.get('/', async(req,res)=>{     // get all post from db
 
 
 
-const PORT = 8080;   // assign port 
+const PORT = process.env.PORT || 8080;   // assign port 
 app.listen(PORT ,()=>{         // calling server 
     console.log(`Server is connected at http://localhost:${PORT}`); // diaplay
     
