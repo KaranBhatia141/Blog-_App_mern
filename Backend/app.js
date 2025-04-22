@@ -5,11 +5,11 @@ const jwt = require('jsonwebtoken'); // it help to authenticate, user verifiying
 const bcrypt = require('bcryptjs');// it use to protect user password with method of hashing
 const User = require('./models/User'); 
 const Post = require('./models/Post'); 
-const dotenv = require('dotenv');
+const dotenv = require('dotenv'); // require dotenv for enviorment variable 
 
 
 dotenv.config();
-JWT_SECRET = 'karan';  // jwt secert key that help for to identiy that session is created by you server its a heart of token
+// JWT_SECRET = 'karan';  // jwt secert key that help for to identiy that session is created by you server its a heart of token
 
 mongoose.connect("mongodb://127.0.0.1:27017/Blog-app") // its is a part to connect nodejs to momgodb 
 .then(()=>{
@@ -49,7 +49,7 @@ app.post('/login' ,async (req , res)=>{
  if(!user || !bcrypt.compareSync(password,user.password)) {    // copmparing passwoed that user is legitimate or not
     return res.status(401).send('Indiviual crediential');  // response to client
  }
- const token = jwt.sign({id:user._id},JWT_SECRET);  // token that store clint data or information ,sign to user data 
+ const token = jwt.sign({id:user._id},process.env.JWT_SECRET);  // token that store clint data or information ,sign to user data 
  res.json({token});  // header response
 
 });
