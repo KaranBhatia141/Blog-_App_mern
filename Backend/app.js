@@ -11,7 +11,7 @@ const dotenv = require('dotenv'); // require dotenv for enviorment variable
 dotenv.config();
 // JWT_SECRET = 'karan';  // jwt secert key that help for to identiy that session is created by you server its a heart of token
 
-mongoose.connect("mongodb://127.0.0.1:27017/Blog-app") // its is a part to connect nodejs to momgodb 
+mongoose.connect(process.env.MongoDB_URL)                               //("mongodb://127.0.0.1:27017/Blog-app") // its is a part to connect nodejs to momgodb 
 .then(()=>{
     console.log("DB connected sucessfully");  // display
 })
