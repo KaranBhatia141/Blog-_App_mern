@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = async (e) => {  // form submit fuction 
     e.preventDefault();
     try {
-      const res = await axios.post('https://blog-app-mern-9um1.onrender.com' , formData);  //('http://localhost:8080/register', formData) // sending response to backend 
+      const res = await axios.post('http://localhost:8080/register', formData) // sending response to backend 
       
       alert('Registered successfully');  // diaplay of sucess
       navigate('/login');
