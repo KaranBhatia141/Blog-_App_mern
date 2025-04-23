@@ -7,7 +7,7 @@ export default function Home() {
  const [posts , setPosts] = useState([]);  // track of post is display 
 
  useEffect(()=>{
-  axios.get('https://blog-app-mern-9um1.onrender.com')                                      //('http://localhost:8080/')
+  axios.get('http://localhost:8080/')
   .then(res => setPosts(res.data))
   .catch(err => console.error(err));
  },[]);
