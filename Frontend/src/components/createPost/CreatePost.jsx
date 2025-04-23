@@ -17,7 +17,7 @@ export default function CreatePost() {
     const handleSubmit= async (e)=>{  
         e.preventDefault();
      try{
-        await axios.post('https://blog-app-mern-9um1.onrender.com', formData);              //('http://localhost:8080/posts', formData);  // sending data to backend
+        await axios.post('http://localhost:8080/posts', formData);  // sending data to backend
         alert('Post created');
         navigate('/');
      }catch(err){
