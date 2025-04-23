@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, Routes} from 'react-router-dom';//it used to provide navigate between different path
-import Register from './pages/Register/Register';
+import Register from './pages/register/Register';
 import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import CreatePost from './components/createPost/CreatePost';
