@@ -13,7 +13,7 @@ export default function Login() {
     const handleSubmit = async (e) => {  // handle submit call when form submit 
       e.preventDefault();
       try {
-        const res = await axios.post('https://blog-app-mern-9um1.onrender.com' , formData);                //('http://localhost:8080/login', formData); // send req to server side 
+        const res = await axios.post('http://localhost:8080/login', formData); // send req to server side 
         localStorage.setItem('token', res.data.token);  // saving user info in the token 
         alert('Login successful!');  // diaplay of sucesss
         navigate('/'); // navigate to home page 
